@@ -47,15 +47,6 @@ The lab includes a detection setup that streams **Apache access logs** into the 
 - IP addresses
 - Request paths (e.g., `/index.php?id=../../../etc/passwd`)
 
-### ✔️ Detection Use Cases
-
-- Detect SQLi using suspicious patterns like `' OR 1=1`
-- Detect LFI by monitoring path traversal attempts (`../`)
-- Detect file uploads and shell access
-- Monitor for elevated status codes (401, 403, 500)
-- Track suspicious user-agent behavior
-
----
 
 ## 🚀 How to Deploy the Lab
 
