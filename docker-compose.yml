@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    platform: linux/amd64
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: gyenyame
+      MYSQL_USER: gyenyame_user
+      MYSQL_PASSWORD: password123
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+      - db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  web:
+    build: .
+    container_name: gyenyame_web
+    image: php:apache
+    ports:
+      - "8080:80"
+    volumes:
+      - /Users/niihack/Downloads/GyeByame Bank Project/gyenyame_bank:/var/www/html
+      - ./apache-logs:/var/log/apache2
+    depends_on:
+      - db
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.12.0
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms1g -Xmx1g
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.12.0
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    depends_on:
+      - elasticsearch
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.12.0
+    volumes:
+      - ./logstash/apache.conf:/usr/share/logstash/pipeline/logstash.conf
+      - ./apache-logs:/var/log/apache2
+    ports:
+      - "5044:5044"
+    depends_on:
+      - elasticsearch
+
+volumes:
+  db_data:
+  esdata:

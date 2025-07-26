@@ -1,0 +1,1 @@
+<?php $id = $_GET['txn_id']; $conn = new mysqli("db", "gyenyame_user", "password123", "gyenyame"ß); $result = $conn->query("SELECT * FROM transactions WHERE txn_id = '$id'"); while($row = $result->fetch_assoc()) { echo $row['note']; } ?>

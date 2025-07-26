@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GyeNyame Bank</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #6caaba;
+      color: #013440;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      flex: 0 0 auto;
+      background-color: #003300;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .hero {
+      flex: 1 0 auto;
+      background: #b9e4ee;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .hero .logo img {
+      width: 50;
+      max-width: 200px;
+      margin-bottom: 15px;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      color: #003300;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #024455;
+      max-width: 600px;
+      margin-bottom: 20px;
+    }
+
+    .enter-button a {
+      background-color: #fff;
+      color: #025e73;
+      padding: 12px 25px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      font-size: 1rem;
+    }
+
+    .enter-button a:hover {
+      background-color: #025e73;
+      color: #fff;
+      border: 1px solid #fff;
+    }
+
+    .footer {
+      flex: 0 0 auto;
+      background: #2c3e50;
+      color: #bdc3c7;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>GYE NYAME BANK</h1>
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="logo">
+      <img src="Gye_nyame2.png" alt="GyeNyame Logo" />
+    </div>
+    <h2>Welcome to GyeNyame Bank</h2>
+    <p>Your most spiritually secured financial app on the web 😄 where trust meets technology.</p>
+    <div class="enter-button">
+      <a href="login.php">Enter Bank</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    &copy; <script>document.write(new Date().getFullYear())</script> GyeNyame Bank. All rights reserved.
+    <p>Niihack Labs</p>
+  </footer>
+</body>
+</html>

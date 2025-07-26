@@ -1,0 +1,1 @@
+<?php $id = $_GET['id']; $conn = new mysqli("db", "gyenyame_user", "password123", "gyenyame"); $result = $conn->query("SELECT * FROM accounts WHERE id = $id"); while($row = $result->fetch_assoc()) { echo $row['name']; } ?>

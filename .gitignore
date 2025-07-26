@@ -1,0 +1,44 @@
+# Node modules or Python virtual env (if applicable)
+node_modules/
+venv/
+__pycache__/
+
+# OS & IDE junk
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Logs & runtime
+*.log
+*.pid
+*.gz
+*.db
+*.sqlite3
+
+# Environment and secret files
+.env
+*.key
+*.crt
+*.pem
+
+# Docker stuff
+*.tar
+*.img
+docker-compose.override.yml
+
+# Compiled files / build artifacts
+*.pyc
+dist/
+build/
+
+# Kibana/ELK files
+*.ndjson
+*.mapping.json
+
+# Custom folders
+output/
+tmp/
+
+# Custom Files
+gyenyame_walkthrough.md

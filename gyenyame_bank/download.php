@@ -1,0 +1,1 @@
+<?php if(isset($_GET['file'])) { include("statements/" . $_GET['file']); } ?>
