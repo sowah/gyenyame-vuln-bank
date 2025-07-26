@@ -3,7 +3,7 @@ version: '3.8'
 services:
   db:
     image: mysql:8.0
-    platform: linux/amd64  # Still useful to force x86_64 architecture for compatibility
+    platform: linux/amd64
     environment:
       MYSQL_ROOT_PASSWORD: example
       MYSQL_DATABASE: gyenyame
@@ -22,14 +22,13 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./gyenyame_bank:/var/www/html     # ✅ Changed from absolute to relative path
+      - /Users/niihack/Downloads/GyeByame Bank Project/gyenyame_bank:/var/www/html
       - ./apache-logs:/var/log/apache2
     depends_on:
       - db
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.12.0
-    platform: linux/amd64
     environment:
       - discovery.type=single-node
       - xpack.security.enabled=false
@@ -45,7 +44,6 @@ services:
 
   kibana:
     image: docker.elastic.co/kibana/kibana:8.12.0
-    platform: linux/amd64
     ports:
       - "5601:5601"
     environment:
@@ -55,7 +53,6 @@ services:
 
   logstash:
     image: docker.elastic.co/logstash/logstash:8.12.0
-    platform: linux/amd64
     volumes:
       - ./logstash/apache.conf:/usr/share/logstash/pipeline/logstash.conf
       - ./apache-logs:/var/log/apache2
