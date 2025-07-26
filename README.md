@@ -77,7 +77,6 @@ The lab includes a detection setup that streams **Apache access logs** into the 
 
 ```bash
 docker-compose up -d
-The vulnerable banking site will be accessible at:
 ```
 
 ### 3. Run the application
@@ -105,12 +104,12 @@ Admin	admin	admin123
 ### 6. ⚙️ Docker Services
 
 ```
-Service	Port	Description
-Apache+PHP	8080	GyeNyame vulnerable app
-MySQL	3306	Database
-Elasticsearch	9200	Backend search engine
-Kibana	5601	Dashboard & Visualization
-Logstash	5044	Ingests Apache logs
+Service	      Port	   Description
+Apache+PHP	   8080	   GyeNyame vulnerable app
+MySQL	         3306	   Database
+Elasticsearch	9200	   Backend search engine
+Kibana	      5601	   Dashboard & Visualization
+Logstash	      5044	   Ingests Apache logs
 ```
 
 ### 7. 📁 Folder Structure
