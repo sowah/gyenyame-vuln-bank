@@ -60,7 +60,7 @@ The lab includes a detection setup that streams **Apache access logs** into the 
 1. **Clone this repository**
 
    ```bash
-   git clone https://github.com/your-username/gyenyame-vuln-bank.git
+   git clone https://github.com/sowah/gyenyame-vuln-bank.git
    cd gyenyame-vuln-bank
    
 
