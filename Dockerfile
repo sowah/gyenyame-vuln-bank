@@ -18,3 +18,6 @@ RUN a2enmod rewrite
 
 # Replace default config with ours
 COPY apache/000-default.conf /etc/apache2/sites-available/000-default.conf
+
+#Install mysqli
+RUN docker-php-ext-install mysqli

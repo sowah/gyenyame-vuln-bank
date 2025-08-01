@@ -15,7 +15,7 @@ if (isset($_POST['login'])) {
     $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
 
     // Display the query to help with exploitation (for CTF/lab)
-    echo "<!-- DEBUG: $sql -->";
+    //echo "<!-- DEBUG: $sql -->";
 
     $result = mysqli_query($conn, $sql);
 
@@ -27,7 +27,7 @@ if (isset($_POST['login'])) {
         $error = "Invalid login credentials";
     }
 }
-echo "<pre>DEBUG SQL: $sql</pre>";
+//echo "<pre>DEBUG SQL: $sql</pre>";
 ?>
 
 <!DOCTYPE html>
@@ -101,7 +101,8 @@ echo "<pre>DEBUG SQL: $sql</pre>";
             <img src="Gye_nyame2.png" alt="GyeNyame Logo" />
         </div>
         <h2>GyeNyame Bank Login</h2>
-        <?php if (isset($error)) echo "<div class='error'>$error</div>"; ?>
+
+      <?php if (isset($error)) echo "<div class='error'>$error</div>"; ?>
         <form method="POST">
             <input type="text" name="username" placeholder="Username" required />
             <input type="password" name="password" placeholder="Password" required />
